@@ -19,7 +19,7 @@ Please do **not** package this software as-is, nor make it available to end-user
 
 Important note for Ubuntu users
 -----
-The offsets hardcoded for the mixers seem to differ between 'plain vanialla' Linux and Ubuntu
+The offsets hardcoded for the mixers seem to differ between 'plain vanilla' Linux and Ubuntu
 The original x42 repo targets the vanilla variant. This fork targets Ubuntu, and the status is as follows:
 
 - 18i6    - Please send a /.scarlett-mixer -p dump to determine the offsets 
@@ -32,6 +32,8 @@ Setup
 
 Build-dependencies: gnu-make, a c-compiler, pkg-config, libpango, libcairo,
 lv2 (SDK), alsa (libasound) and openGL (sometimes called: glu, glx, mesa).
+
+sudo apt-get install pango-cairo-1.0 lib-cairo2-dev glib-2.0 asound linux-sound-base alsa-base alsa-utils mesa-util freeglut3-dev lv2-dev
 
 ```bash
   git clone git://github.com/x42/scarlett-mixer
