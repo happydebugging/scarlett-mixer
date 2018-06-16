@@ -62,4 +62,5 @@ See also
 --------
 
 ALSA Mixer in HTLM-5 with ALSA JSON Gateway: http://breizhme.net/alsajson/mixers/ajg#/
+
 git clone git://kernel.ubuntu.com/ubuntu/ubuntu-bionic.git  (/sound/usb/mixer-scarlett.c)
