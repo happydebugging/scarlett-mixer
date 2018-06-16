@@ -22,10 +22,10 @@ Important note for Ubuntu users
 The offsets hardcoded for the mixers seem to differ between 'plain vanilla' Linux and Ubuntu
 The original x42 repo targets the vanilla variant. This fork targets Ubuntu, and the status is as follows:
 
-- 18i6    - Please send a /.scarlett-mixer -p dump to determine the offsets 
+- 18i6    - Please send a ./scarlett-mixer -p dump to determine the offsets 
 - 18i8    - Offsets updated on the dump provided by kujaw in the x42 repo issue post
-- 18i20   - Updated and tested on Ubuntu 18.04
-- 6i6     - (untested) - please send a /.scarlett-mixer -p dump to determine the offsets
+- 18i20   - Updated and tested on Ubuntu 18.04 (4.15.0-23-lowlatency)
+- 6i6     - (untested) - please send a ./scarlett-mixer -p dump to determine the offsets
 
 Setup
 -----
@@ -50,7 +50,7 @@ Usage (run from source-dir)
 
 ```bash
   ./scarlett-mixer --help
-  ./scarlett-mixer hw:2   # change "hw:2" to match your device
+  ./scarlett-mixer hw:2   # change "hw:2" to match your device , on Ubuntu this should be USB
 ```
 
 Screenshot
