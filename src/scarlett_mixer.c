@@ -111,12 +111,19 @@ static Device devices[] = {
 		.smst = 3,
 		.num_hiz = 2,
 		.num_pad = 0,
-		.matrix_mix_offset = 33, .matrix_mix_stride = 9, // XXX stride should be 7, bug in kernel-driver ?!
-		.matrix_in_offset = 22, .matrix_in_stride = 9,   // XXX stride should be 7, bug in kernel-driver ?!
+	    // x.42 Vanilla Linux
+		//.matrix_mix_offset = 33, .matrix_mix_stride = 9, // XXX stride should be 7, bug in kernel-driver ?!
+		//.matrix_in_offset = 22, .matrix_in_stride = 9,   // XXX stride should be 7, bug in kernel-driver ?!
+	    // Based on aenertia's information
+		.matrix_mix_offset = 25, .matrix_mix_stride = 9, // XXX stride should be 7, bug in kernel-driver ?!
+		.matrix_in_offset = 24, .matrix_in_stride = 9,   // XXX stride should be 7, bug in kernel-driver ?!	
 		.out_gain_map = { 1 /* Monitor */, 4 /* Headphone */, 7 /* SPDIF */, -1, -1, -1 , -1, -1, -1, -1 },
 		.out_gain_labels = { "Monitor", "Headphone", "SPDIF", "", "", "", "", "", "", "" },
 		.out_bus_map = { 2, 3, 5, 6, 8, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
-		.input_offset = 16,
+		// x.42 Vanilla Linux
+		//.input_offset = 16,
+        // Based on aenertia's information
+		.input_offset = 18,	
 		.hiz_map = { 10, 12 },
 		.pad_map = { -1, -1, -1, -1 },
 	},
@@ -134,7 +141,7 @@ static Device devices[] = {
 	    .matrix_in_offset = 53, .matrix_in_stride = 9,
         .input_offset = 33, 
 		.out_gain_map = { 1, 7, 10, 13, 16, 19, 22, 25, 28, 2  },
-		.out_gain_labels = { "Monitor", "Line 3/4", "Line 5/6", "Line 7/8", "Line 9/10" , "SPDIF", "ADAT 1/2", "ADAT 3/4", "ADAT 5/6", "ADAT 7/8" },
+		.out_gain_labels = { "Monitor", "Line 3/4", "Line 5/6", "Line 7/8 (HP1)", "Line 9/10 (HP2)" , "SPDIF", "ADAT 1/2", "ADAT 3/4", "ADAT 5/6", "ADAT 7/8" },
 		.out_bus_map = { 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 24, 26, 27, 29, 30, 3, 4 },
 		.hiz_map = { -1, -1 },
 		.pad_map = { -1, -1, -1, -1 },
