@@ -25,7 +25,7 @@ The original x42 repo targets the vanilla variant. This fork targets Ubuntu, and
 - 18i6    - Please send a ./scarlett-mixer -p dump to determine the offsets 
 - 18i8    - Offsets updated on the dump provided by kujaw in the x42 repo issue post
 - 18i20   - Updated and tested on Ubuntu 18.04 (4.15.0-23-lowlatency)
-- 6i6     - (untested) - please send a ./scarlett-mixer -p dump to determine the offsets
+- 6i6     - Updated based on aenertia dump but not verified.
 
 Setup
 -----
