@@ -109,25 +109,42 @@ static Device devices[] = {
 		.smi = 6, .smo = 6,
 		.sin = 6, .sout = 6,
 		.smst = 3,
+
+                // Number of Hi-Z imputs
 		.num_hiz = 2,
-		.num_pad = 0,
-	    // x.42 Vanilla Linux
+
+                // Number of pads
+		// .num_pad = 0,
+                // Based on aenertia's information
+	        .num_pad = 4,  // XXX does the device have pad? bug in kernel-driver?
+
+                // Index of first matrix control
 		//.matrix_mix_offset = 33, .matrix_mix_stride = 9, // XXX stride should be 7, bug in kernel-driver ?!
-		//.matrix_in_offset = 22, .matrix_in_stride = 9,   // XXX stride should be 7, bug in kernel-driver ?!
-	    // Based on aenertia's information
+                // === Based on aenertia's information
 		.matrix_mix_offset = 25, .matrix_mix_stride = 9, // XXX stride should be 7, bug in kernel-driver ?!
+
+                // Index of first input control
+		//.matrix_in_offset = 22, .matrix_in_stride = 9,   // XXX stride should be 7, bug in kernel-driver ?!
+	        // Based on aenertia's information
 		.matrix_in_offset = 24, .matrix_in_stride = 9,   // XXX stride should be 7, bug in kernel-driver ?!	
+
 		.out_gain_map = { 1 /* Monitor */, 4 /* Headphone */, 7 /* SPDIF */, -1, -1, -1 , -1, -1, -1, -1 },
 		.out_gain_labels = { "Monitor", "Headphone", "SPDIF", "", "", "", "", "", "", "" },
 		.out_bus_map = { 2, 3, 5, 6, 8, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
-		// x.42 Vanilla Linux
+
 		//.input_offset = 16,
-        // Based on aenertia's information
+                // Based on aenertia's information
 		.input_offset = 18,	
-		.hiz_map = { 10, 12 },
-		.pad_map = { -1, -1, -1, -1 },
-	},
-	{
+
+		 //.hiz_map = { 10, 12 },
+                 // === Based on aenertia's information
+                .hiz_map = { 12, 14 },
+
+		 // .pad_map = { -1, -1, -1, -1 },
+                 // === Based on aenertia's information
+                .pad_map = { 13, 15, 16, 17 },
+ 	},
+        {
 		.name = "Scarlett 18i20 USB",
 		.smi = 18, .smo = 8,
 		.sin = 18, .sout = 20,
@@ -137,9 +154,9 @@ static Device devices[] = {
 		//.matrix_mix_offset = 50, .matrix_mix_stride = 9,
 		//.matrix_in_offset = 49, .matrix_in_stride = 9,
 		//.input_offset = 31,
-	 	.matrix_mix_offset = 54, .matrix_mix_stride = 9,
-	    .matrix_in_offset = 53, .matrix_in_stride = 9,
-        .input_offset = 33, 
+ 	 	.matrix_mix_offset = 54, .matrix_mix_stride = 9,
+    	        .matrix_in_offset = 53, .matrix_in_stride = 9,
+                .input_offset = 33, 
 		.out_gain_map = { 1, 7, 10, 13, 16, 19, 22, 25, 28, 2  },
 		.out_gain_labels = { "Monitor", "Line 3/4", "Line 5/6", "Line 7/8 (HP1)", "Line 9/10 (HP2)" , "SPDIF", "ADAT 1/2", "ADAT 3/4", "ADAT 5/6", "ADAT 7/8" },
 		.out_bus_map = { 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 24, 26, 27, 29, 30, 3, 4 },
